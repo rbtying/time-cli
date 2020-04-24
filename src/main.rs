@@ -106,7 +106,7 @@ fn parse(s: &str) -> Result<DateTime<Utc>, ()> {
 
 fn main() {
     let app = App::new("time-cli")
-        .version("0.1.0")
+        .version("0.1")
         .author("Robert Ying <rbtying@aeturnalus.com>")
         .about("Command-line utility for parsing timestamps")
         .arg(
