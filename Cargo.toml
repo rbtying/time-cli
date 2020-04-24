@@ -3,6 +3,8 @@ name = "time-cli"
 version = "0.1.0"
 authors = ["Robert Ying <rbtying@aeturnalus.com>"]
 edition = "2018"
+license = "MIT"
+description = "A simple command-line tool for looking at timestamps"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
