@@ -58,12 +58,17 @@ fn parse_dt_str(fmt: &'static str) -> impl Fn(&str) -> Result<DateTime<Utc>, ()>
         if p.month.is_none() {
             p.set_month(1).unwrap();
         }
-        Ok(DateTime::<Utc>::from_utc(
+        let dt = DateTime::<Utc>::from_utc(
             p.to_naive_date()
                 .map_err(|_| ())?
                 .and_time(p.to_naive_time().map_err(|_| ())?),
             Utc,
-        ))
+        );
+        if dt.timestamp() > LOWER_BOUND && dt.timestamp() < UPPER_BOUND {
+            Ok(dt)
+        } else {
+            Err(())
+        }
     }
 }
 
